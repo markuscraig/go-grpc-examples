@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.fitquick.rpc.examples.howdy";
+option java_outer_classname = "HowdyProto";
+
+package howdy;
+
+// greeting service definition
+service Greeter {
+  // sending a greeting
+  rpc SayHowdy (HowdyRequest) returns (HowdyReply) {}
+}
+
+// request message
+message HowdyRequest {
+  string name = 1;
+}
+
+// response message
+message HowdyReply {
+  string msg = 1;
+}
